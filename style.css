@@ -173,9 +173,10 @@ img {
 
 .hero-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
+  margin-top: 48px;
 }
 
 .hero-title {
@@ -218,18 +219,27 @@ img {
   padding-bottom: 1px;
 }
 
+.hero-photo {
+  height: 520px;
+  overflow: hidden;
+}
+
 .hero-photo img {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: center top;
 }
 
 @media (max-width: 900px) {
   .hero-split {
     grid-template-columns: 1fr;
     gap: 40px;
+    margin-top: 32px;
   }
   .hero-photo {
-    order: -1;
+    height: 360px;
   }
 }
 
