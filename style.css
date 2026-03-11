@@ -348,7 +348,6 @@ img {
   width: 100%;
   display: block;
   margin-top: 40px;
-  filter: invert(1);
 }
 
 .client-name {
