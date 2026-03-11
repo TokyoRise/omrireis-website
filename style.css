@@ -79,8 +79,8 @@ img {
 
 .nav-logo a {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: normal;
+  font-size: 1.6rem;
+  font-weight: 700;
   letter-spacing: 0.02em;
   color: #ffffff;
 }
