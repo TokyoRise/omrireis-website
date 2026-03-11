@@ -11,12 +11,12 @@
 }
 
 :root {
-  --color-bg: #111111;
-  --color-text: #ffffff;
-  --color-muted: #bbbbbb;
-  --color-light: #222222;
-  --color-border: #333333;
-  --color-accent: #ffffff;
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-muted: #666666;
+  --color-light: #f5f5f5;
+  --color-border: #e0e0e0;
+  --color-accent: #111111;
   --font-body: 'Poppins', Helvetica, Arial, sans-serif;
   --font-heading: 'Poppins', Helvetica, Arial, sans-serif;
   --max-width: 1100px;
@@ -84,7 +84,7 @@ img {
   font-size: 1.25rem;
   font-weight: normal;
   letter-spacing: 0.02em;
-  color: #111111;
+  color: var(--color-text);
 }
 
 .nav-links {
@@ -98,7 +98,7 @@ img {
   font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--color-text);
   transition: opacity 0.2s;
 }
 
@@ -136,7 +136,7 @@ img {
   display: block;
   width: 24px;
   height: 2px;
-  background: #111111;
+  background: var(--color-text);
   transition: all 0.3s;
 }
 
