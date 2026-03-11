@@ -326,11 +326,7 @@ img {
 
 .clients {
   padding: 80px 0;
-  background: #ffffff;
-}
-
-.clients .clients-label {
-  color: #666666;
+  background: var(--color-bg);
 }
 
 .clients-label {
@@ -352,6 +348,7 @@ img {
   width: 100%;
   display: block;
   margin-top: 40px;
+  filter: invert(1);
 }
 
 .client-name {
