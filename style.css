@@ -11,19 +11,17 @@
 }
 
 :root {
-  --color-bg: #ffffff;
-  --color-text: #111111;
-  --color-muted: #666666;
-  --color-light: #f5f5f5;
-  --color-border: #e0e0e0;
-  --color-accent: #111111;
+  --color-bg: #111111;
+  --color-text: #ffffff;
+  --color-muted: #bbbbbb;
+  --color-light: #1a1a1a;
+  --color-border: #333333;
+  --color-accent: #ffffff;
   --font-body: 'Poppins', Helvetica, Arial, sans-serif;
   --font-heading: 'Poppins', Helvetica, Arial, sans-serif;
   --max-width: 1100px;
   --nav-height: 70px;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -62,7 +60,7 @@ img {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255,255,255,0.97);
+  background: rgba(17,17,17,0.97);
   border-bottom: 1px solid var(--color-border);
   height: var(--nav-height);
   display: flex;
@@ -84,7 +82,7 @@ img {
   font-size: 1.25rem;
   font-weight: normal;
   letter-spacing: 0.02em;
-  color: var(--color-text);
+  color: #ffffff;
 }
 
 .nav-links {
@@ -98,7 +96,7 @@ img {
   font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: #ffffff;
   transition: opacity 0.2s;
 }
 
@@ -115,10 +113,14 @@ img {
 }
 
 .nav-social a {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #666666;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.nav-social a:hover {
+  opacity: 1;
 }
 
 /* Hamburger for mobile */
@@ -753,7 +755,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #fff;
+    background: #111111;
     padding: 40px;
     gap: 24px;
     align-items: flex-start;
