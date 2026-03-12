@@ -1091,32 +1091,30 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 6px;
-  padding: 0 20px;
-  transition: background 0.2s;
-}
-.logo-item:hover {
-  background: rgba(255,255,255,0.12);
+  height: 40px;
 }
 .logo-img {
-  height: 26px;
+  height: 30px;
   width: auto;
-  max-width: 110px;
+  max-width: 120px;
   display: block;
-  transition: transform 0.2s;
+  opacity: 0.85;
+  transition: opacity 0.2s;
 }
 .logo-img:hover {
-  transform: scale(1.05);
+  opacity: 1;
 }
 .logo-text {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.65);
   white-space: nowrap;
+  transition: color 0.2s;
+}
+.logo-text:hover {
+  color: rgba(255,255,255,1);
 }
 @keyframes logos-scroll {
   from { transform: translateX(0); }
