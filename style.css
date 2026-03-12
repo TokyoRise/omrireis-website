@@ -1081,7 +1081,7 @@ img {
   align-items: center;
   gap: 64px;
   width: max-content;
-  animation: logos-scroll 30s linear infinite;
+  animation: logos-scroll 55s linear infinite;
 }
 .logos-track:hover {
   animation-play-state: paused;
