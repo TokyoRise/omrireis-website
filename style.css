@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Heebo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* ==========================================
    Omri Reis — Global Styles
@@ -1050,55 +1050,6 @@ img {
 }
 
 /* ==========================================
-   Language Toggle
-   ========================================== */
-.lang-toggle {
-  background: none;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  padding: 4px 10px;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: border-color 0.2s, opacity 0.2s;
-  margin-left: 16px;
-}
-.lang-toggle:hover {
-  border-color: var(--color-yellow);
-  color: var(--color-yellow);
-}
-
-/* ==========================================
-   RTL / Hebrew
-   ========================================== */
-[dir="rtl"] body {
-  font-family: 'Heebo', var(--font-body);
-}
-[dir="rtl"] .nav-inner {
-  flex-direction: row-reverse;
-}
-[dir="rtl"] .footer-inner {
-  flex-direction: row-reverse;
-}
-[dir="rtl"] .hero-split {
-  direction: rtl;
-}
-[dir="rtl"] .nav-links {
-  flex-direction: row-reverse;
-}
-[dir="rtl"] .pillars-grid {
-  direction: rtl;
-}
-[dir="rtl"] .case-nav-link.next {
-  align-items: flex-start;
-  text-align: left;
-  margin-left: 0;
-  margin-right: auto;
-}
-
-/* ==========================================
    Logo Carousel
    ========================================== */
 .logos-carousel {
@@ -1140,31 +1091,32 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
+  height: 52px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  padding: 0 20px;
+  transition: background 0.2s;
+}
+.logo-item:hover {
+  background: rgba(255,255,255,0.12);
 }
 .logo-img {
-  height: 28px;
+  height: 26px;
   width: auto;
-  max-width: 120px;
-  filter: brightness(0) invert(1);
-  opacity: 0.55;
-  transition: opacity 0.2s;
+  max-width: 110px;
   display: block;
+  transition: transform 0.2s;
 }
 .logo-img:hover {
-  opacity: 1;
+  transform: scale(1.05);
 }
 .logo-text {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.75);
   white-space: nowrap;
-  transition: color 0.2s;
-}
-.logo-text:hover {
-  color: rgba(255,255,255,0.9);
 }
 @keyframes logos-scroll {
   from { transform: translateX(0); }
