@@ -808,7 +808,7 @@ img {
 .btn-submit {
   display: inline-block;
   background: var(--color-text);
-  color: #fff;
+  color: var(--color-bg);
   font-size: 0.78rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;

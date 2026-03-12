@@ -38,19 +38,24 @@ if (toggle && navLinks) {
   });
 }
 
-// Contact form — Formspree AJAX submission
+// Contact form — formsubmit.co AJAX submission
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
 if (form && status) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
+    const formData = new FormData(form);
+    const body = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch('https://formsubmit.co/ajax/omri.reis@gmail.com', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(body)
       });
       if (res.ok) {
         status.textContent = "Thanks for reaching out! I'll be in touch soon.";
