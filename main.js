@@ -12,15 +12,29 @@ const toggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
 
 if (toggle && navLinks) {
-  toggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
   // Close menu when a link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !toggle.contains(e.target)) {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
   });
 }
 
@@ -39,7 +53,7 @@ if (form && status) {
         headers: { Accept: 'application/json' }
       });
       if (res.ok) {
-        status.textContent = 'Thanks for reaching out! I'll be in touch soon.';
+        status.textContent = "Thanks for reaching out! I'll be in touch soon.";
         status.style.display = 'block';
         form.reset();
       } else {
