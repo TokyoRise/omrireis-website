@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Heebo:wght@400;700&display=swap');
 
 /* ==========================================
    Omri Reis — Global Styles
@@ -1047,4 +1047,126 @@ img {
   .clients {
     padding: 48px 0;
   }
+}
+
+/* ==========================================
+   Language Toggle
+   ========================================== */
+.lang-toggle {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: border-color 0.2s, opacity 0.2s;
+  margin-left: 16px;
+}
+.lang-toggle:hover {
+  border-color: var(--color-yellow);
+  color: var(--color-yellow);
+}
+
+/* ==========================================
+   RTL / Hebrew
+   ========================================== */
+[dir="rtl"] body {
+  font-family: 'Heebo', var(--font-body);
+}
+[dir="rtl"] .nav-inner {
+  flex-direction: row-reverse;
+}
+[dir="rtl"] .footer-inner {
+  flex-direction: row-reverse;
+}
+[dir="rtl"] .hero-split {
+  direction: rtl;
+}
+[dir="rtl"] .nav-links {
+  flex-direction: row-reverse;
+}
+[dir="rtl"] .pillars-grid {
+  direction: rtl;
+}
+[dir="rtl"] .case-nav-link.next {
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* ==========================================
+   Logo Carousel
+   ========================================== */
+.logos-carousel {
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+  padding: 16px 0;
+}
+.logos-carousel::before,
+.logos-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.logos-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg), transparent);
+}
+.logos-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg), transparent);
+}
+.logos-track {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: max-content;
+  animation: logos-scroll 30s linear infinite;
+}
+.logos-track:hover {
+  animation-play-state: paused;
+}
+.logo-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+}
+.logo-img {
+  height: 28px;
+  width: auto;
+  max-width: 120px;
+  filter: brightness(0) invert(1);
+  opacity: 0.55;
+  transition: opacity 0.2s;
+  display: block;
+}
+.logo-img:hover {
+  opacity: 1;
+}
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.logo-text:hover {
+  color: rgba(255,255,255,0.9);
+}
+@keyframes logos-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
