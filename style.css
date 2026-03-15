@@ -1121,11 +1121,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
-  height: 96px;
+  width: 144px;
+  height: 144px;
   background: #000;
-  border-radius: 14px;
-  padding: 14px;
+  border-radius: 21px;
+  padding: 21px;
   box-sizing: border-box;
   overflow: hidden;
 }
