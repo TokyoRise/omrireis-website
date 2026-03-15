@@ -62,7 +62,7 @@ img {
   right: 0;
   z-index: 100;
   background: rgba(17,17,17,0.97);
-  border-bottom: 1px solid var(--color-yellow);
+  border-bottom: 2px solid var(--color-yellow);
   height: var(--nav-height);
   display: flex;
   align-items: center;
@@ -277,7 +277,7 @@ img {
 
 .divider {
   border: none;
-  border-top: 1px solid var(--color-yellow);
+  border-top: 2px solid var(--color-yellow);
   margin: 0;
 }
 
@@ -1126,6 +1126,7 @@ img {
   background: #000;
   border-radius: 21px;
   padding: 21px;
+  border: 3px solid var(--color-yellow);
   box-sizing: border-box;
   overflow: hidden;
 }
