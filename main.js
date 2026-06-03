@@ -12,28 +12,39 @@ const toggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
 
 if (toggle && navLinks) {
+  // Inject social icons into mobile dropdown once
+  const navSocial = document.querySelector('.nav-social');
+  if (navSocial) {
+    const mobileSocialLi = document.createElement('li');
+    mobileSocialLi.className = 'mobile-social';
+    mobileSocialLi.innerHTML = navSocial.innerHTML;
+    navLinks.appendChild(mobileSocialLi);
+  }
+
+  const closeMenu = () => {
+    navLinks.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
     const isOpen = navLinks.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
-  // Close menu when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+  // Close menu when a nav link is clicked (not social icons)
+  navLinks.querySelectorAll('li:not(.mobile-social) a').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !toggle.contains(e.target)) {
-      navLinks.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      closeMenu();
     }
   });
 }
