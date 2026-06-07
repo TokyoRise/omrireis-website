@@ -106,6 +106,8 @@ img {
   opacity: 0.5;
 }
 
+.mobile-social { display: none; }
+
 .nav-social {
   display: flex;
   align-items: center;
