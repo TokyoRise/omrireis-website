@@ -1193,3 +1193,202 @@ img {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+/* ==========================================
+   Accessibility additions (IS 5568 / WCAG 2.0 AA)
+   ========================================== */
+
+/* Skip-to-content link — visible only on focus */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  background: var(--color-yellow, #F2C94C);
+  color: #000;
+  padding: 12px 18px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 10000;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 12px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Stronger focus visibility for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-yellow, #F2C94C);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ==========================================
+   Footer legal links (Privacy / Accessibility)
+   ========================================== */
+.footer-legal {
+  max-width: var(--max-width);
+  margin: 16px auto 0;
+  padding: 0 40px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  flex-wrap: wrap;
+}
+.footer-legal a {
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: var(--color-text);
+}
+
+/* ==========================================
+   Legal pages (privacy.html / accessibility.html)
+   ========================================== */
+.legal {
+  padding: 80px 0 60px;
+}
+.legal .container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.legal-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.legal-updated {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin: 0 0 36px;
+}
+.legal h2 {
+  font-size: 1.25rem;
+  margin: 32px 0 12px;
+  font-weight: 700;
+}
+.legal p,
+.legal li {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+.legal ul {
+  padding-inline-start: 22px;
+  margin: 8px 0 16px;
+}
+.legal li {
+  margin-bottom: 8px;
+}
+.legal a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal a:hover {
+  color: var(--color-yellow, #F2C94C);
+}
+.legal code {
+  background: var(--color-light, #1a1a1a);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.legal kbd {
+  background: var(--color-light, #1a1a1a);
+  border: 1px solid var(--color-border, #333);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-family: inherit;
+}
+
+/* ==========================================
+   Cookie consent banner
+   ========================================== */
+.cookie-banner {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  max-width: 720px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.cookie-banner__text {
+  margin: 0;
+  flex: 1 1 280px;
+}
+.cookie-banner__text a {
+  color: var(--color-yellow, #F2C94C);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-banner__buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cookie-banner__btn {
+  font: inherit;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.cookie-banner__btn--accept {
+  background: var(--color-yellow, #F2C94C);
+  color: #000;
+  border-color: var(--color-yellow, #F2C94C);
+}
+.cookie-banner__btn--decline:hover {
+  background: #2a2a2a;
+}
+.cookie-banner__btn--accept:hover {
+  background: #d9b13a;
+  border-color: #d9b13a;
+}
+.cookie-banner__btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+@media (max-width: 560px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .cookie-banner__buttons {
+    justify-content: center;
+  }
+}
